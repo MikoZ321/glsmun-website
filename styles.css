@@ -1,0 +1,42 @@
+:root {
+    --background-black: #121113;
+    --text-white: #ebebd3;
+    --accent-blue: #1446a0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--text-white);
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    width: 100vw;
+    background-color: var(--background-black);
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+#logoDiv {
+    display: flex;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navLink {
+    font-size: 2rem;
+    padding: 0 10px;
+}
