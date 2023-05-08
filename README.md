@@ -1,2 +1,8 @@
 # glsmun-website
 Official website of the Global Leaders' Summit Model United Nations
+
+Sitemap and wireframes:
+https://app.moqups.com/fXWgeHucAF5MfEFqVzP12tfI6WIL9lGX/view/page/a540b1b67
+
+Main doc:
+https://docs.google.com/document/d/1xN3OvwVPJt998troIkqXTOGU8p92Ckkd2sHd6nSsKtQ/edit?usp=sharing
