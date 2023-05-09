@@ -19,14 +19,14 @@
     --background-black: #121113;
     --text-white: #ebebd3;
     --accent-blue: #1446a0;
+    --header-height: 90px;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: var(--text-white);
-    font-family: 'Myanmar MN', Helvetica, sans-serif;
+    font-family: 'Futura Medium', Helvetica, sans-serif;
 }
 
 a {
@@ -36,17 +36,29 @@ a {
 header {
     width: 100vw;
     background-color: var(--background-black);
-    height: 80px;
+    height: var(--header-height);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
+    position: fixed;
+    top: 0;
+    color: var(--text-white);
 }
 
 #logoDiv {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#logoImg {
+    width: 90px;
+    aspect-ratio: 1 / 1;
+}
+
+#logoText {
+    height: 60px;
 }
 
 nav ul {
@@ -59,4 +71,83 @@ nav ul {
 .navLink {
     font-size: 2rem;
     padding: 0 10px;
+    color: var(--text-white);
 }
+
+header a {
+    color: var(--text-white);
+}
+
+#hero {
+    margin-top: var(--header-height);
+    width: 100%;
+    height: 800px;
+    background-image: url(./imgs/globeStructure.png);
+    background-color: var(--text-white);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+    filter: saturate(80%) brightness(80%) contrast(90%);
+}
+
+#hero h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-top: 200px;
+    color: black; /* migth be better to use true black for better contrast and readability */
+}
+
+#hero #date {
+    font-size: 2.5rem;
+    margin-top: 115px;
+    font-weight: bold;
+    color: black;
+}
+
+#hero .btn {
+    padding: 8px 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--background-black);
+    color: var(--text-white);
+    text-transform: uppercase;
+    margin-top: 120px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.btn:active {
+    transform: scale(0.9);
+}
+
+@media (max-width: 1080px) {
+    .navLink {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 1020px) {
+    .navLink {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 920px) {
+    #logoText {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+}
+
+/* Good till 720px */
