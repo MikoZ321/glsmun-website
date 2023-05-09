@@ -3,6 +3,18 @@
     src: url(./Fonts/FuturaMedium/FuturaMedium.otf);
 }
 
+@font-face {
+    font-family: 'Myanmar MN';
+    src: url(./Fonts/myanmar-mn.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Myanmar MN';
+    src: url(./Fonts/myanmar-mn-bold.ttf);
+    font-weight: bold;
+}
+
 :root {
     --background-black: #121113;
     --text-white: #ebebd3;
@@ -14,7 +26,7 @@
     padding: 0;
     box-sizing: border-box;
     color: var(--text-white);
-    font-family: 'Futura Medium', Helvetica, sans-serif;
+    font-family: 'Myanmar MN', Helvetica, sans-serif;
 }
 
 a {
@@ -33,6 +45,8 @@ header {
 
 #logoDiv {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav ul {
