@@ -206,10 +206,9 @@ header a {
 
 .grid {
     width: var(--content-width);
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 15px;
 }
 
 .icon {
@@ -226,7 +225,7 @@ header a {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-bottom: 15px;
+    margin: 0 auto;
 }
 
 .committeeName {
