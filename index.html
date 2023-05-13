@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./styles.css" />
-        <script src="./script.js"></script>
+        <script src="./script.js" defer></script>
         <title>GLSMUN</title>
     </head>
     <body>
@@ -16,13 +16,16 @@
                     <img src="./imgs/glsmunText.png" id="logoText" alt="glsmun text" />
                 </div>
             </a>
-            <nav id="navbar">
-                <ul>
-                    <li class="navLink"><a href="#">GLSMUN 2024</a></li>
-                    <li class="navLink"><a href="#">About</a></li>
-                    <li class="navLink"><a href="#">Preperation</a></li>
-                    <li class="navLink"><a href="#">FAQ</a></li>
-                    <li class="navLink"><a href="#">Contact</a></li>
+            <nav>
+                <a id="hamburger">
+                    <img width="40px"  height="40px" src="./imgs/hamburger menu.png" alt="hamburger menu" />
+                </a>
+                <ul class="navbar">
+                    <a href="#" class="navLink"><li>GLSMUN 2024</li></a>
+                    <a href="#" class="navLink"><li>About</li></a>
+                    <a href="#" class="navLink"><li>Preperation</li></a>
+                    <a href="#" class="navLink"><li>FAQ</li></a>
+                    <a href="#" class="navLink"><li>Contact</li></a>
                 </ul>
             </nav>
         </header>
