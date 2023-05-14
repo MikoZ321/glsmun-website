@@ -25,6 +25,7 @@
     --text-gap: 15px;
     --title-margin: 8vh;
     --content-width: 70vw;
+    --tile-width: 240px;
 }
 
 * {
@@ -131,14 +132,12 @@ header a {
     position: relative;
     font-size: 4rem;
     font-weight: bold;
-    /* margin-top: 20vh; */
-    color: black; /* migth be better to use true black for better contrast and readability */
+    color: black;
 }
 
 #hero #date {
     position: relative;
     font-size: 2.5rem;
-    /* margin: 11vh 0; */
     font-weight: bold;
     color: black;
 }
@@ -218,8 +217,9 @@ header a {
 .grid {
     width: var(--content-width);
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    row-gap: 15px;
+    grid-template-columns: repeat(6, var(--tile-width));
+    justify-content: center;
+    gap: 15px;
 }
 
 .icon {
@@ -228,7 +228,7 @@ header a {
 }
 
 .tile {
-    width: 240px;
+    width: var(--tile-width);
     background-color: var(--background-black);
     color: var(--text-white);
     border-radius: 10px;
@@ -250,23 +250,25 @@ header a {
 
 @media (max-width: 1800px) {
     .grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, var(--tile-width));
     }
 }
 
 @media (max-width: 1450px) {
     .grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, var(--tile-width));
+    }
+} 
+
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(3, var(--tile-width));
     }
 }
 
 @media (max-width: 1080px) {
     .navLink li{
         font-size: 1.8rem;
-    }
-
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -282,11 +284,20 @@ header a {
         height: 0;
         opacity: 0;
     }
+
+    .grid {
+        grid-template-columns: repeat(2, var(--tile-width));
+    }
 }
 
 /* Navbar Good till 720px */
 
-@media (max-width: 720px) {
+@media (max-width: 740px) {
+    :root {
+        --header-padding-side: 20px;
+        --content-width: 80vw;
+    }
+
     header {
         padding-right: calc(var(--header-padding-side) - 20px);
     }
@@ -335,11 +346,13 @@ header a {
         display: block;
         text-align: left;
     }
-}
 
-@media (max-width: 700px) {
-    :root {
-        --content-width: 80vw;
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    #hero #date {
+        font-size: 2rem;
     }
 }
 
