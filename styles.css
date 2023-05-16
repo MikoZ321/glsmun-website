@@ -257,6 +257,7 @@ header a {
     justify-content: center;
     align-items: center;
     color: var(--text-white);
+    text-align: center;
 }
 
 #sponsors ul,
@@ -307,7 +308,7 @@ footer #socials {
 
 footer #navigation {
     display: flex;
-    flex-direction: row;
+    flex-flow: wrap row;
     justify-content: center;
     align-items: center;
     gap: 15px;
@@ -316,6 +317,11 @@ footer #navigation {
 footer #navigation a{
     font-size: 1.2rem;
     color: var(--text-white);
+}
+
+footer p {
+    text-align: center;
+    font-size: 0.8rem;
 }
 
 footer p a {
