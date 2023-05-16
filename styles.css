@@ -491,7 +491,7 @@ footer p a {
 
     .tile {
         width: 100%;
-        background-color: #fff;
+        background-color: var(--offwhite);
         color: var(--background-black)
     }
 
