@@ -15,8 +15,9 @@ hamburger.addEventListener("click", function () {
         navbar.classList.add("responsive");
         body.classList.add("noscroll");
     }
-})
+});
 
 navlinks.forEach(navLink => navLink.addEventListener('click', function () {
     body.classList.remove("noscroll");
-}))
+    navbar.classList.remove("responsive");
+}));
