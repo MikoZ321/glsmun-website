@@ -41,6 +41,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 
 a {
@@ -103,8 +104,12 @@ header a {
     overflow: hidden;
 }
 
+body:nth-child(2) {
+    margin-top: var(--header-height);
+}
+
 #hero {
-    padding: var(--header-height) 10px 0;
+    padding: 0 10px;
     width: 100%;
     height: var(--hero-height);
     position: relative;
@@ -262,15 +267,28 @@ header a {
     text-align: center;
 }
 
-#sponsors ul,
-#partners ul {
+.scroll-list {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 15px;
     width: var(--content-width);
-    height: 80px;
     margin-bottom: var(--title-margin);
+    overflow-x: scroll;
+}
+
+.scroll-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scroll-list::-webkit-scrollbar-track {
+    background-color: #bbb;
+    border-radius: 5px;
+}
+
+.scroll-list::-webkit-scrollbar-thumb {
+    background-color: var(--background-black);
+    border-radius: 5px;
 }
 
 #partners {
@@ -282,6 +300,29 @@ header a {
     text-align: center;
     color: var(--background-black);
     background-color: var(--offwhite);
+}
+
+.conference {
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    background-color: var(--background-black);
+    padding: 10px 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.conference img {
+    border-radius: 10px;
+}
+
+.conference a {
+    color: var(--text-white);
+    font-size: 1.25rem;
 }
 
 footer {
