@@ -97,6 +97,10 @@ ul {
     text-align: center;
 }
 
+.wrapper .title {
+    margin-bottom: calc(var(--title-margin) - var(--text-gap));
+}
+
 .title {
     margin-bottom: var(--title-margin);
     font-size: 2rem;
@@ -120,6 +124,38 @@ ul {
     gap: var(--grid-gap);
     width: var(--content-width);
     overflow-x: scroll;
+}
+
+.sponsors .scroll-list {
+    display: none;
+}
+
+.scroll-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scroll-list::-webkit-scrollbar-track {
+    background-color: #bbb;
+    border-radius: var(--default-border-radius);
+}
+
+.scroll-list::-webkit-scrollbar-thumb {
+    background-color: var(--background-black);
+    border-radius: var(--default-border-radius);
+}
+
+.btn {
+    border: none;
+    border-radius: var(--default-border-radius);
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.btn:active {
+    transform: scale(0.9);
 }
 
 header {
@@ -170,7 +206,7 @@ nav ul {
     overflow: hidden;
 }
 
-#hero {
+.hero {
     justify-content: space-evenly;
     padding: 0 10px;
     height: var(--hero-height);
@@ -178,7 +214,7 @@ nav ul {
     z-index: 5;
 }
 
-#hero::before {
+.hero::before {
     content: "";
     position: absolute;
     top: 0; left: 0;
@@ -191,43 +227,28 @@ nav ul {
     filter: saturate(80%) brightness(60%) contrast(90%);
 }
 
-#hero h1 {
+.hero h1 {
     position: relative;
     font-size: 4rem;
     font-weight: bold;
     color: black;
 }
 
-#hero p {
+.hero p {
     position: relative;
     font-size: 2.5rem;
     font-weight: bold;
     color: black;
 }
 
-#hero .btn {
+.hero .btn {
     position: relative;
     padding: 10px 20px;
     font-size: 2rem;
     font-weight: bold;
-    border: none;
-    border-radius: var(--default-border-radius);
     background-color: var(--background-black);
     color: var(--text-white);
     text-transform: uppercase;
-    cursor: pointer;
-}
-
-.btn:hover {
-    transform: scale(1.1);
-}
-
-.btn:active {
-    transform: scale(0.9);
-}
-
-.theme .title {
-    margin-bottom: calc(var(--title-margin) - var(--text-gap));
 }
 
 .committees {
@@ -239,7 +260,7 @@ nav ul {
 }
 
 .grid {
-    width: var(--content-width);
+    width: calc(var(--content-width) + 10vw);
     display: grid;
     grid-template-columns: repeat(6, var(--tile-width));
     justify-content: center;
@@ -264,7 +285,7 @@ nav ul {
     margin: 0 var(--tile-padding-side);
 }
 
-.committeeName {
+.committee-name {
     font-size: 1.5rem;
 }
 
@@ -272,25 +293,7 @@ nav ul {
     font-size: 1.3rem;
 }
 
-.sponsors .scroll-list {
-    display: none;
-}
-
-.scroll-list::-webkit-scrollbar {
-    width: 10px;
-}
-
-.scroll-list::-webkit-scrollbar-track {
-    background-color: #bbb;
-    border-radius: var(--default-border-radius);
-}
-
-.scroll-list::-webkit-scrollbar-thumb {
-    background-color: var(--background-black);
-    border-radius: var(--default-border-radius);
-}
-
-.conference {
+.partner-conference {
     height: 220px;
     display: flex;
     flex-direction: column;
@@ -311,11 +314,11 @@ nav ul {
     margin-bottom: 5px;
 }
 
-.conference img {
+.partner-conference img {
     border-radius: var(--default-border-radius);
 }
 
-.conference a {
+.partner-conference a {
     font-size: 1.25rem;
 }
 
@@ -338,7 +341,7 @@ footer #socials {
 }
 
 footer #socials img {
-    filter: brightness(0.93) contrast(1.1) sepia(1.2);
+    filter: brightness(0.94) contrast(1.1) sepia(1.2); /* Makes background of mymun logo simmilar to var(--text-white) */
 }
 
 footer #navigation {
@@ -455,11 +458,11 @@ footer p {
         text-align: left;
     }
 
-    #hero h1 {
+    .hero h1 {
         font-size: 2.5rem;
     }
 
-    #hero p {
+    .hero p {
         font-size: 2rem;
     }
 }
