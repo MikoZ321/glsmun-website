@@ -22,11 +22,12 @@
     --accent-blue: #1446a0;
     --header-height: 90px;
     --header-padding-side: 40px;
-    --hero-height: 800px;
+    --hero-height: 750px;
     --text-gap: 15px;
     --title-margin: 8vh;
     --content-width: 70vw;
     --tile-width: 240px;
+    --grid-gap: 15px;
 }
 
 * {
@@ -108,9 +109,13 @@ body:nth-child(2) {
     margin-top: var(--header-height);
 }
 
+section {
+    width: 100%;
+    padding: var(--title-margin) 0;
+}
+
 #hero {
     padding: 0 10px;
-    width: 100%;
     height: var(--hero-height);
     position: relative;
     display: flex;
@@ -150,7 +155,7 @@ body:nth-child(2) {
 
 #hero .btn {
     position: relative;
-    padding: 8px 20px;
+    padding: 10px 20px;
     font-size: 2rem;
     font-weight: bold;
     border: none;
@@ -185,12 +190,10 @@ body:nth-child(2) {
     align-items: center;
     background-color: var(--background-black);
     color: var(--text-white);
-    width: 100%;
     overflow-x: hidden;
 }
 
 .title {
-    margin-top: var(--title-margin);
     margin-bottom: calc(var(--title-margin) - var(--text-gap));
     font-size: 2rem;
     font-family: 'Myanmar MN';
@@ -206,19 +209,13 @@ body:nth-child(2) {
     text-align: left;
 }
 
-#theme .wrapper:last-child {
-    padding-bottom: var(--title-margin);
-}
-
 #committees {
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
     color: var(--background-black);
     text-align: center;
-    padding-bottom: var(--title-margin);
     background-color: var(--offwhite);
 }
 
@@ -227,7 +224,7 @@ body:nth-child(2) {
     display: grid;
     grid-template-columns: repeat(6, var(--tile-width));
     justify-content: center;
-    gap: 15px;
+    gap: var(--grid-gap);
 }
 
 .icon {
@@ -258,7 +255,6 @@ body:nth-child(2) {
 
 #sponsors {
     background-color: var(--background-black);
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -267,13 +263,16 @@ body:nth-child(2) {
     text-align: center;
 }
 
+#sponsors > .scroll-list {
+    display: none;
+}
+
 .scroll-list {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 15px;
+    gap: var(--grid-gap);
     width: var(--content-width);
-    margin-bottom: var(--title-margin);
     overflow-x: scroll;
 }
 
@@ -292,7 +291,6 @@ body:nth-child(2) {
 }
 
 #partners {
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -312,7 +310,7 @@ body:nth-child(2) {
     background-color: var(--background-black);
     padding: 10px 10px 15px;
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin-bottom: var(--grid-gap);
 }
 
 .img-link {
