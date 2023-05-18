@@ -371,6 +371,69 @@ footer p {
 
 /* glsmun-2024.html */
 
+.table {
+    width: var(--content-width);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px auto;
+    border-radius: var(--default-border-radius);
+}
+
+div.day:nth-child(1) {
+    border-top-left-radius: var(--default-border-radius);
+}
+
+div.day:nth-child(3) {
+    border-top-right-radius: var(--default-border-radius);
+}
+
+.day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.day h2 {
+    font-size: 1.5rem;
+}
+
+.plan {
+    text-align: left;
+    background-color: var(--text-white);
+}
+
+.plan ul {
+    width: 100%;
+    padding: 10px;
+    list-style-type: "- ";
+    list-style-position: inside;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    gap: calc(var(--text-gap) - 5px);
+} 
+
+div.plan:nth-child(4),
+div.plan:nth-child(6) {
+    border: var(--table-border) solid var(--background-black);
+    border-top: none;
+}
+
+div.plan:nth-child(4) {
+    border-bottom-left-radius: var(--default-border-radius);
+}
+
+div.plan:nth-child(5) {
+    border-bottom: var(--table-border) solid var(--background-black);
+}
+
+div.plan:nth-child(6) {
+    border-bottom-right-radius: var(--default-border-radius);
+}
+
 .committees {
     justify-content: start;
 }
@@ -413,71 +476,6 @@ footer p {
     font-size: 1.3rem;
 }
 
-.table {
-    width: var(--content-width);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 50px auto;
-    /* border: var(--table-border) solid var(--background-black); */
-    border-radius: var(--default-border-radius);
-}
-
-div.day:nth-child(1) {
-    border-top-left-radius: var(--default-border-radius);
-}
-
-div.day:nth-child(3) {
-    border-top-right-radius: var(--default-border-radius);
-}
-
-/* .table div {
-    border: var(--table-border) solid var(--background-black);
-} */
-
-.day {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 1.2rem;
-}
-
-.plan {
-    text-align: left;
-    background-color: var(--text-white);
-}
-
-.plan ul {
-    width: 100%;
-    padding: 10px;
-    list-style-type: "- ";
-    list-style-position: inside;
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: start;
-    gap: calc(var(--text-gap) - 5px);
-} 
-
-div.plan:nth-child(4),
-div.plan:nth-child(6) {
-    border: var(--table-border) solid var(--background-black);
-    border-top: none;
-}
-
-div.plan:nth-child(4) {
-    border-bottom-left-radius: var(--default-border-radius);
-}
-
-div.plan:nth-child(5) {
-    border-bottom: var(--table-border) solid var(--background-black);
-}
-
-div.plan:nth-child(6) {
-    border-bottom-right-radius: var(--default-border-radius);
-}
-
 @media (max-width: 1080px) {
     .navLink li{
         font-size: 1.8rem;
@@ -487,6 +485,42 @@ div.plan:nth-child(6) {
 @media (max-width: 1020px) {
     .navLink li{
         font-size: 1.5rem;
+    }
+
+    .table {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 50px auto);
+    }
+
+    .plan {
+        margin-bottom: var(--grid-gap);
+        border-radius: 0;
+        border-bottom-left-radius: var(--default-border-radius);
+        border-bottom-right-radius: var(--default-border-radius);
+        border: var(--table-border) solid var(--background-black);
+        border-top: none;
+        height: fit-content;
+    }
+
+    .day {
+        border-top-left-radius: var(--default-border-radius);
+        border-top-right-radius: var(--default-border-radius);
+    }
+
+    div.plan:nth-child(4) {
+        grid-row: 2;
+    }
+
+    div.day:nth-child(2) {
+        grid-row: 3;
+    }
+
+    div.plan:nth-child(5) {
+        grid-row: 4;
+    }
+
+    div.day:nth-child(3) {
+        grid-row: 5;
     }
 }
 
@@ -574,11 +608,6 @@ div.plan:nth-child(6) {
     .stats ul {
         flex-direction: column;
         gap: calc(var(--grid-gap) * 2);
-    }
-
-    .table {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, 50px 200px);
     }
 }
 
