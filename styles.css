@@ -31,6 +31,7 @@
     --default-border-radius: 10px;
     --tile-padding-side: 15px;
     --button-gap: 50px;
+    --table-border: 3px;
 }
 
 * {
@@ -296,46 +297,8 @@ nav ul {
     color: var(--accent-blue);
 }
 
-.committees {
-    justify-content: start;
-}
-
-.committees .title {
-    color: var(--background-black);
-}
-
-.grid {
-    width: calc(var(--content-width) + 10vw);
-    display: grid;
-    grid-template-columns: repeat(6, var(--tile-width));
-    justify-content: center;
-    gap: var(--grid-gap);
-}
-
-.tile {
-    width: var(--tile-width);
-    background-color: var(--background-black);
-    color: var(--text-white);
-    border-radius: var(--default-border-radius);
-    padding: var(--tile-padding-side) 7px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--text-gap);
-    margin: 0 auto;
-}
-
-.icon {
-    border-radius: var(--default-border-radius);
-    margin: 0 var(--tile-padding-side);
-}
-
-.committee-name {
-    font-size: 1.5rem;
-}
-
-.issue {
-    font-size: 1.3rem;
+.stats .btn {
+    margin-top: calc(var(--title-margin) / 2);
 }
 
 .partner-conference {
@@ -406,22 +369,113 @@ footer p {
     font-size: 0.8rem;
 }
 
-@media (max-width: 1800px) {
-    .grid {
-        grid-template-columns: repeat(5, var(--tile-width));
-    }
+/* glsmun-2024.html */
+
+.committees {
+    justify-content: start;
 }
 
-@media (max-width: 1450px) {
-    .grid {
-        grid-template-columns: repeat(4, var(--tile-width));
-    }
+.committees .title {
+    color: var(--background-black);
+}
+
+.grid {
+    width: calc(var(--content-width) + 10vw);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--tile-width));
+    justify-content: center;
+    gap: var(--grid-gap);
+}
+
+.tile {
+    width: var(--tile-width);
+    background-color: var(--background-black);
+    color: var(--text-white);
+    border-radius: var(--default-border-radius);
+    padding: var(--tile-padding-side) 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--text-gap);
+    margin: 0 auto;
+}
+
+.icon {
+    border-radius: var(--default-border-radius);
+    margin: 0 var(--tile-padding-side);
+}
+
+.committee-name {
+    font-size: 1.5rem;
+}
+
+.issue {
+    font-size: 1.3rem;
+}
+
+.table {
+    width: var(--content-width);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px auto;
+    /* border: var(--table-border) solid var(--background-black); */
+    border-radius: var(--default-border-radius);
+}
+
+div.day:nth-child(1) {
+    border-top-left-radius: var(--default-border-radius);
+}
+
+div.day:nth-child(3) {
+    border-top-right-radius: var(--default-border-radius);
+}
+
+/* .table div {
+    border: var(--table-border) solid var(--background-black);
+} */
+
+.day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.plan {
+    text-align: left;
+    background-color: var(--text-white);
+}
+
+.plan ul {
+    width: 100%;
+    padding: 10px;
+    list-style-type: "- ";
+    list-style-position: inside;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    gap: calc(var(--text-gap) - 5px);
 } 
 
-@media (max-width: 1200px) {
-    .grid {
-        grid-template-columns: repeat(3, var(--tile-width));
-    }
+div.plan:nth-child(4),
+div.plan:nth-child(6) {
+    border: var(--table-border) solid var(--background-black);
+    border-top: none;
+}
+
+div.plan:nth-child(4) {
+    border-bottom-left-radius: var(--default-border-radius);
+}
+
+div.plan:nth-child(5) {
+    border-bottom: var(--table-border) solid var(--background-black);
+}
+
+div.plan:nth-child(6) {
+    border-bottom-right-radius: var(--default-border-radius);
 }
 
 @media (max-width: 1080px) {
@@ -441,10 +495,6 @@ footer p {
         width: 0;
         height: 0;
         opacity: 0;
-    }
-
-    .grid {
-        grid-template-columns: repeat(2, var(--tile-width));
     }
 }
 
@@ -524,6 +574,11 @@ footer p {
     .stats ul {
         flex-direction: column;
         gap: calc(var(--grid-gap) * 2);
+    }
+
+    .table {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 50px 200px);
     }
 }
 
