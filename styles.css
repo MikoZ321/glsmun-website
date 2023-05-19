@@ -246,14 +246,14 @@ nav ul {
     position: relative;
     font-size: 4rem;
     font-weight: bold;
-    color: black;
+    color: var(--text-white);
 }
 
 .hero p {
     position: relative;
     font-size: 2.5rem;
     font-weight: bold;
-    color: black;
+    color: var(--text-white);
 }
 
 .hero .btn {
@@ -273,6 +273,10 @@ nav ul {
     justify-content: space-evenly;
     align-items: center;
     width: var(--content-width);
+}
+
+.stats a {
+    color: var(--background-black);
 }
 
 .stat {
