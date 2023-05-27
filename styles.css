@@ -24,6 +24,7 @@
     --header-padding-side: 40px;
     --hero-height: 750px;
     --text-gap: 15px;
+    --text-font-size: 1.3rem;
     --title-margin: 8vh;
     --content-width: 70vw;
     --tile-width: 240px;
@@ -110,7 +111,7 @@ ul {
 }
 
 .text {
-    font-size: 1.3rem;
+    font-size: var(--text-font-size);
     text-align: justify;
     width: 100%;
 }
@@ -486,6 +487,23 @@ div.plan:nth-child(even) {
 
 .issue {
     font-size: 1.3rem;
+}
+
+/* about.html */
+
+.light .text a {
+    text-decoration: underline;
+    color: var(--background-black);
+}
+
+.text a:hover {
+    color: var(--accent-blue);
+}
+
+.quote {
+    font-size: calc(var(--text-font-size) - .1rem);
+    width: 80%;
+    margin: var(--text-gap) auto;
 }
 
 @media (max-width: 1200px) {
